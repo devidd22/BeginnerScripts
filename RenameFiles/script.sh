@@ -29,6 +29,9 @@ echo "Prefix sau sufix?"
 read -r raspuns_user
 if [[ "$raspuns_user" == "prefix" || "$raspuns_user" == "sufix" ]]; then
 	break
+elif [[ "$raspuns_user" == "exit" ]]; then
+	echo "Va multumim ca ati folosit aplicatia noastra!"
+	exit 1
 fi
 echo "Trebuie sa introduceti 1 din cele 2 posibilitati"
 
@@ -48,6 +51,9 @@ if [[ "$extensie" == "director" ]]; then
 	else
 		continue
 	fi
+elif [[ "$extensie" == "exit" ]]; then
+	echo "Va multumim ca ati folosit aplicatia noastra!"
+	exit 1
 fi
 nr=0
 for f in *."$extensie"; do
